@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class RabbitmqDemoApplication {
-    /***************************************队列***********************************************/
+    /***************************************创建一个持久性的队列,当前rabbitmq不存在的话,就会进行创建***********************************************/
     @Bean
     public Queue helloQueue() {
         return new Queue("helloQueue");
@@ -41,7 +41,7 @@ public class RabbitmqDemoApplication {
     public Queue fanoutC() {
         return new Queue("fanoutC");
     }
-    /***************************************exchange***********************************************/
+    /***************************************创建一个exchange,当前rabbitmq不存在的话,就会进行创建***********************************************/
     @Bean
     TopicExchange topicExchange() {
         return new TopicExchange("topicExchange");
